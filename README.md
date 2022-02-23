@@ -106,3 +106,5 @@ spec:
 ```
 
 This would assume the `Service` for the application includes the `prometheus-metrics: true` annotation and the port name is `8080-tcp`.
+
+For example: https://github.com/pittar-demos/roadshow/blob/main/gitops/developer/petclinic/base/02-petclinic-svc.yaml
