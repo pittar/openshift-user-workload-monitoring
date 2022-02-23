@@ -83,9 +83,8 @@ https://github.com/pittar/spring-petclinic/blob/gitops-tekton/src/main/resources
 
 For the Quarkus dashboard, a similar tag is required to set the runtime tag value to "quarkus".  For example:
 
-https://github.com/pittar-gameoflife/web-ui/blob/main/src/main/resources/application.properties#L3
-and
-https://github.com/pittar-gameoflife/web-ui/blob/main/src/main/java/ca/pitt/demo/gameoflife/ui/config/CustomConfiguration.java#L28
+* https://github.com/pittar-gameoflife/web-ui/blob/main/src/main/resources/application.properties#L3
+* https://github.com/pittar-gameoflife/web-ui/blob/main/src/main/java/ca/pitt/demo/gameoflife/ui/config/CustomConfiguration.java#L28
 
 ## Example ServiceMonitor
 
