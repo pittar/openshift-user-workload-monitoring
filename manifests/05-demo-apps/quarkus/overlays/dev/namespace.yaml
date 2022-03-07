@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: Quarkus metrics demo DEV
+    openshift.io/display-name: Quarkus Demo DEV
+  name: quarkus-dev
