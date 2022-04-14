@@ -118,13 +118,13 @@ If you want to deploy a demo app in your cluster that is pre-configured to work 
 Deploy a Quarkus app that is configured to use the Micrometer Prometheus registry.  The app will expose prometheus metrics at the `/q/metrics` path.  The configuration includes a pre-configured `ServiceMonitor`.  The app will be deployed to the `quarkus-dev` namespace.  Metrics should start appearing in the Quarkus dashboard a minute or two after the app starts running.
 
 ```
-oc apply -k 05-demo-apps/quarkus/overlays/dev
+oc apply -k manifests/05-demo-apps/quarkus/overlays/dev
 ```
 
 If you also want a second "test" namespace (to see how the 'namespace' drop down works in the dashboard), you can create a `quarkus-test` instance like so:
 
 ```
-oc apply -k 05-demo-apps/quarkus/overlays/test
+oc apply -k manifests/05-demo-apps/quarkus/overlays/test
 ```
 
 Application GitHub repo: [Quarkus Prometheus Demo](https://github.com/pittar/quarkus-prometheus-demo)
@@ -134,13 +134,13 @@ Application GitHub repo: [Quarkus Prometheus Demo](https://github.com/pittar/qua
 Deploy a Spring Boot app that is configured to use the Micrometer Prometheus registry.  The app will expose prometheus metrics at the `/actuator/prometheus` path.  The configuration includes a pre-configured `ServiceMonitor`.  The app will be deployed to the `petclinic-dev` namespace.  Metrics should start appearing in the Quarkus dashboard a minute or two after the app starts running.
 
 ```
-oc apply -k 05-demo-apps/springboot/overlays/dev
+oc apply -k manifests/05-demo-apps/springboot/overlays/dev
 ```
 
 If you also want a second "test" namespace (to see how the 'namespace' drop down works in the dashboard), you can create a `petclinic-test` instance like so:
 
 ```
-oc apply -k 05-demo-apps/springboot/overlays/test
+oc apply -k manifests/05-demo-apps/springboot/overlays/test
 ```
 
 Application GitHub repo: [Spring Pet Clinic - prometheus branch](https://github.com/pittar/spring-petclinic/tree/prom)
