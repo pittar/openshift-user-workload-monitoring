@@ -6,4 +6,4 @@ resources:
   - 02-petclinic-svc.yaml
   - 03-petclinic-route.yaml
   - 04-service-monitor.yaml
-  #- 05-alert.yaml
+  - 05-alert.yaml
