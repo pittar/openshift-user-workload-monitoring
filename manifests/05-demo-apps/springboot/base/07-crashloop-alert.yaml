@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: petclinic-crashloop
+  labels:
+    openshift.io/prometheus-rule-evaluation-scope: leaf-prometheus
+spec:
+  groups:
+  - name: petclinic
+    rules:
+    - alert: PCKubePodCrashLooping
+      annotations:
+        description: 'Pod {{ $labels.namespace }}/{{ $labels.pod }} ({{ $labels.container
+          }}) is in waiting state (reason: "CrashLoopBackOff").'
+        summary: Pod is crash looping.
+      expr: |
+        max_over_time(kube_pod_container_status_waiting_reason{reason="CrashLoopBackOff", container="petclinic", job="kube-state-metrics"}[5m]) >= 1
+      labels:
+        severity: warning

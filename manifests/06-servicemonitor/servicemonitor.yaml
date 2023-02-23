@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: server
+  namespace: petclinic-dev
+spec:
+  selector:
+    matchLabels:
+      prometheus-metrics: "true"
+  endpoints:
+  - port: 8080-tcp
+    path: /actuator/prometheus
+    scheme: http

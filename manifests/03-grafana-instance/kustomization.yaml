@@ -4,10 +4,10 @@ kind: Kustomization
 namespace: workload-monitoring
 
 resources:
+  - grafana-sa.yaml
   - session-secret.yaml
   - grafana-proxy-rbac.yaml
   - cluster-monitor-view-rb.yaml
   - grafana-ds.yaml
   - grafana.yaml
-  - patch-grafana-ds-sa.yaml
-  - patch-grafana-ds-job.yaml
+  - grafana-auth-secret.yaml

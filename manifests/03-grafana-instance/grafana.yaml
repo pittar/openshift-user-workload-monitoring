@@ -3,6 +3,13 @@ kind: Grafana
 metadata:
   name: grafana
 spec:
+  deployment:
+    env:
+    - name: GRAFANA_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: grafana-auth-secret
+          key: token
   config:
     log:
       mode: "console"
@@ -17,7 +24,7 @@ spec:
   containers:
     - env:
         - name: SAR
-          value: '-openshift-sar={"namespace":"workload-monitoring","resource":"routes","name":"grafana-route","verb":"get"}'
+          value: '-openshift-sar={"resource": "namespaces", "verb": "get"}'
       args:
         - '-provider=openshift'
         - '-pass-basic-auth=false'
@@ -35,7 +42,7 @@ spec:
         - '-openshift-ca=/etc/pki/tls/cert.pem'
         - '-openshift-ca=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt'
         - '-skip-auth-regex=^/metrics'
-      image: 'registry.redhat.io/openshift4/ose-oauth-proxy:v4.9'
+      image: 'registry.redhat.io/openshift4/ose-oauth-proxy:v4.6'
       imagePullPolicy: Always
       name: grafana-proxy
       ports:
