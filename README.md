@@ -56,7 +56,7 @@ Next, deploy a `GrafanaDataSource` that is configured to pull data from the Than
 1. Defines RBAC to allow the Grafana `ServiceAccount` to read metrics.
 2. Creates a `GrafanaDataSource` to pull data from Thanos Querier.
 3. Creates the `Grafana` instance.
-4. Creates a `Job` that injects the Grafana service account token into the `GrafanaDataSource` config.
+4. Creates a `Secret` that injects the Grafana service account token into the `GrafanaDataSource` config.
 
 To deploy all of the above, run the following command:
 
